@@ -134,7 +134,6 @@ function searchByRange() {
     const minPrice = Number(minInput.value);
     const maxPrice = Number(maxInput.value);
 
-    // Validate inputs
     if (
         minInput.value.trim() === "" ||
         maxInput.value.trim() === ""
@@ -156,13 +155,11 @@ function searchByRange() {
         return;
     }
 
-    // Find products within the range
     const filteredProducts = products.filter(function(product) {
         return product.price >= minPrice &&
                product.price <= maxPrice;
     });
 
-    // Display results
     productList.innerHTML = "";
 
     if (filteredProducts.length === 0) {
